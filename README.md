@@ -31,25 +31,25 @@ Crie um novo usuário e banco de dados para o projeto. Para isso, siga os passos
 
 1 - Acesse o usuário `postgres`:
 
-    ```bash
-    sudo -i -u postgres
-    ```
+```bash
+sudo -i -u postgres
+```
 
 2 - Crie um novo usuário:
 
-    ```bash
-    createuser -P seu_usuario
-    ```
-    Substitua `seu_usuario` pelo nome do seu usuário.
-    Defina uma senha.
+```bash
+createuser -P seu_usuario
+```
+Substitua `seu_usuario` pelo nome do seu usuário.
+Defina uma senha.
 
 3 - Crie um novo banco de dados atribuindo-o ao usuário recém-criado:
 
-    ```bash
-    createdb db_contas -O seu_usuario
-    ```
+```bash
+createdb db_contas -O seu_usuario
+```
 
-    Substitua `seu_usuario` pelo nome do seu usuário.
+Substitua `seu_usuario` pelo nome do seu usuário.
 
 ### 4 - Configurar Acesso
 
@@ -57,19 +57,19 @@ Certifique-se de que o arquivo `pg_hba.conf` está configurado para permitir o a
 
 1 - Localize o arquivo `pg_hba.conf`. Normalmente, ele está localizado em:
 
-    ```bash
-    /etc/postgresql/[versão]/main/pg_hba.conf
-    ```
+```bash
+/etc/postgresql/[versão]/main/pg_hba.conf
+```
 
-    Substitua `[versão]` pela versão do PostgreSQL que você instalou.
+Substitua `[versão]` pela versão do PostgreSQL que você instalou.
 
 2 - Edite o arquivo para ajustar as configurações de autenticação conforme necessário, permitindo o acesso ao banco de dados pelo usuário criado.
 
 3 - Após realizar as alterações, reinicie o serviço PostgreSQL para que as mudanças entrem em vigor:
 
-    ```bash
-    sudo service postgresql restart
-    ```
+```bash
+sudo service postgresql restart
+```
 
 ## Utilizando os scripts
 
@@ -113,16 +113,16 @@ Restaure o banco de dados a partir do backup, com o script restore_db_contas_scr
 
 1 - Execute o script de verificação do Tomcat:
 
-    ```bash
-    ./is_tomcat_running.sh
-    ```
+```bash
+./is_tomcat_running.sh
+```
 
 ### 2 - Verificar o Status do JBoss
 
 1. **Execute o script de verificação do JBoss**:
 
-    ```bash
-    ./is_jboss_running.sh
-    ```
+```bash
+./is_jboss_running.sh
+```
 
 Este projeto foi desenvolvido como parte de um teste técnico e pode conter áreas a serem otimizadas. Sinta-se à vontade para explorar, modificar e contribuir. Busco sempre evoluir como desenvolvedor e ouvir outras opiniões e ideias.
