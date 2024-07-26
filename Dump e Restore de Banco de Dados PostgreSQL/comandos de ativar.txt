@@ -1,0 +1,3 @@
+chmod +x dump_db_conta_script.sh
+
+./dump_db_conta_script.sh
