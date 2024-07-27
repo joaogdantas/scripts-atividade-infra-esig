@@ -73,7 +73,16 @@ sudo service postgresql restart
 
 ## Utilizando os scripts
 
-### 1 - Criar o Banco de Dados e Inserir Dados de Exemplo
+### 1 - Permissões
+
+Dê permissões aos arquivos para serem executados com os comandos:
+
+```bash
+chmod +x dump_db_contas_script.sh
+chmod +x restore_db_contas_script.sh
+```
+
+### 2 - Criar o Banco de Dados e Inserir Dados de Exemplo
 
 Crie as tabelas e insera os dados de exemplo a partir do arquivo db_contas.sql com o comando:
 
@@ -81,7 +90,7 @@ Crie as tabelas e insera os dados de exemplo a partir do arquivo db_contas.sql c
 psql -U seu_usuario -d db_contas -f db_contas.sql
 ```
 
-### 2 - Fazer o Backup do Banco de Dados
+### 3 - Fazer o Backup do Banco de Dados
 
 Use o script dump_db_contas_script.sh para criar um backup do banco de dados db_contas com o comando:
 
@@ -91,7 +100,7 @@ Use o script dump_db_contas_script.sh para criar um backup do banco de dados db_
 
 Este script gera um arquivo de backup de nome db_contas.bkp.
 
-### 3 - Excluir as Tabelas
+### 4 - Excluir as Tabelas
 
 Para simular uma situação de perda de dados, exclua as tabelas do banco de dados:
 
@@ -99,7 +108,7 @@ Para simular uma situação de perda de dados, exclua as tabelas do banco de dad
 psql -U seu_usuario -d db_contas -c "DROP TABLE IF EXISTS users, wallets CASCADE;"
 ```
 
-### 4 - Restaurar o Banco de Dados
+### 5 - Restaurar o Banco de Dados
 
 Restaure o banco de dados a partir do backup, com o script restore_db_contas_script.sh:
 
@@ -109,7 +118,16 @@ Restaure o banco de dados a partir do backup, com o script restore_db_contas_scr
 
 # Verificando execução de JBoss e Tomcat
 
-### 1 - Verificar o Status do Tomcat
+### 1 - Permissões
+
+Dê permissões aos arquivos para serem executados com os comandos:
+
+```bash
+chmod +x is_jboss_running.sh
+chmod +x is_tomcat_running.sh
+```
+
+### 2 - Verificar o Status do Tomcat
 
 1 - Execute o script de verificação do Tomcat:
 
@@ -117,9 +135,9 @@ Restaure o banco de dados a partir do backup, com o script restore_db_contas_scr
 ./is_tomcat_running.sh
 ```
 
-### 2 - Verificar o Status do JBoss
+### 3 - Verificar o Status do JBoss
 
-1. **Execute o script de verificação do JBoss**:
+1. Execute o script de verificação do JBoss:
 
 ```bash
 ./is_jboss_running.sh
